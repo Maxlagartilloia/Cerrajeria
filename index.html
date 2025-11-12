@@ -497,6 +497,27 @@
     if (contactLnk) contactLnk.href = URL_GENERIC;
   });
 </script>
+    <!-- Botón Flotante WhatsApp -->
+  <a id="float-whatsapp-btn" href="#" target="_blank" class="fixed bottom-6 right-6 z-50 bg-secondary-orange text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-xl transition duration-300 hover:bg-[#ffaa60] hover:scale-110">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- =============== JS PRINCIPAL =============== -->
+  <script>
+    const WHATSAPP_NUMBER = '593969881264';
+
+    // === WhatsApp (mensajes por botón) ===
+    const MSG_HEADER = `Hola, Toti 👋 ¿cómo estás? Vi tu página y me gustaría cotizar un trabajo o conocer tus servicios.`;
+    const MSG_GENERIC = `¡Hola! 👋 Vi tu página de Cerrajería Totti y me gustaría hacer una consulta o cotización, por favor.`;
+    const URL_HEADER  = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(MSG_HEADER)}`;
+    const URL_GENERIC = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(MSG_GENERIC)}`;
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('nav-whatsapp-btn').href = URL_HEADER;
+      document.getElementById('mobile-whatsapp-btn').href = URL_GENERIC;
+      document.getElementById('float-whatsapp-btn').href = URL_GENERIC;
+      document.getElementById('contact-whatsapp-link').href = URL_GENERIC;
+    });
 
     /* === Menú móvil === */
     const menuToggle = document.getElementById('menu-toggle');
@@ -599,7 +620,7 @@ Por favor, envíame la cotización. ¡Gracias!`;
       }, { passive:true });
     });
 
-    /* === Pausa de animaciones mientras se desplaza (evita repaints costosos) === */
+    /* === Pausa de animaciones mientras se desplaza === */
     let scrollTimer;
     window.addEventListener('scroll', ()=>{
       document.documentElement.classList.add('is-scrolling');
@@ -609,3 +630,5 @@ Por favor, envíame la cotización. ¡Gracias!`;
   </script>
 </body>
 </html>
+
+  
