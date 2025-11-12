@@ -468,22 +468,35 @@
     <i class="fab fa-whatsapp"></i>
   </a>
 
-  <!-- JS -->
   <script>
-    /* === WhatsApp: MENSAJE CORTO (opción 2) para botones === */
-    const WHATSAPP_NUMBER = '593969881264';
-    const SHORT_MSG = `¡Hola! 👋 Vi tu página de *Cerrajería Totti* y me gustó mucho tu trabajo.
-Quisiera hacerte una consulta sobre tus servicios o una posible cotización.
-¿Podrías orientarme, por favor?`;
-    const SHORT_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(SHORT_MSG)}`;
+  // === WhatsApp: mensajes por botón ===
+  const WHATSAPP_NUMBER = '593969881264';
 
-    document.addEventListener('DOMContentLoaded', () => {
-      const byId = id => document.getElementById(id);
-      byId('nav-whatsapp-btn').href = SHORT_URL;
-      byId('mobile-whatsapp-btn').href = SHORT_URL;
-      byId('float-whatsapp-btn').href = SHORT_URL;
-      byId('contact-whatsapp-link').href = SHORT_URL;
-    });
+  // Mensaje ESPECÍFICO para el botón grande del header (cliente saludando a Toti)
+  const MSG_HEADER = `Hola, Toti 👋 ¿cómo estás? Vi tu página y me gustaría cotizar un trabajo. 
+¿Me puedes contar tus servicios y disponibilidad?`;
+
+  // Mensaje genérico para los otros botones (móvil, flotante, contacto)
+  const MSG_GENERIC = `¡Hola! 👋 Vi tu página de Cerrajería Totti y me gustaría una consulta/cotización, por favor.`;
+
+  const URL_HEADER  = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(MSG_HEADER)}`;
+  const URL_GENERIC = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(MSG_GENERIC)}`;
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // Botón grande de la barra principal
+    const headerBtn = document.getElementById('nav-whatsapp-btn');
+    if (headerBtn) headerBtn.href = URL_HEADER;
+
+    // Otros botones
+    const mobileBtn  = document.getElementById('mobile-whatsapp-btn');
+    const floatBtn   = document.getElementById('float-whatsapp-btn');
+    const contactLnk = document.getElementById('contact-whatsapp-link');
+
+    if (mobileBtn)  mobileBtn.href  = URL_GENERIC;
+    if (floatBtn)   floatBtn.href   = URL_GENERIC;
+    if (contactLnk) contactLnk.href = URL_GENERIC;
+  });
+</script>
 
     /* === Menú móvil === */
     const menuToggle = document.getElementById('menu-toggle');
