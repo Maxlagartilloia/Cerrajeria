@@ -353,21 +353,29 @@
     </div>
 
     <!-- Video -->
-    <section id="video" class="py-16 md:py-24 hot-metal-bg">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-3xl sm:text-4xl font-extrabold mb-4 text-white">Vea Nuestro <span class="text-secondary-orange">Trabajo</span> en Acción</h2>
-        <p class="text-center text-gray-400 mb-12 max-w-2xl mx-auto">Un breve vistazo al proceso de fabricación y la calidad de nuestra soldadura.</p>
+<section id="video" class="py-16 md:py-24 hot-metal-bg">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-3xl sm:text-4xl font-extrabold mb-4 text-white">
+      Vea Nuestro <span class="text-secondary-orange">Trabajo</span> en Acción
+    </h2>
+    <p class="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
+      Un breve vistazo al proceso de fabricación y la calidad de nuestra soldadura.
+    </p>
 
-        <div class="relative w-full max-w-4xl mx-auto aspect-video rounded-xl shadow-2xl shadow-secondary-orange/50 overflow-hidden">
-          <iframe class="w-full h-full"
-            src="https://www.youtube.com/embed/AQW3ASfBJ_c"
-            title="Cerrajería Totti - Video de trabajos" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-          </iframe>
-        </div>
-      </div>
-    </section>
+    <!-- En móviles: 9/16 para Shorts (sin barras) | En escritorio: 16/9 -->
+    <div class="relative w-full max-w-4xl mx-auto rounded-xl shadow-2xl shadow-secondary-orange/50 overflow-hidden aspect-[9/16] md:aspect-video">
+      <iframe
+        class="absolute inset-0 w-full h-full"
+        src="https://www.youtube.com/embed/shorts/AQW3ASfBJ_c?rel=0&modestbranding=1&playsinline=1"
+        title="Cerrajería Totti - Video de trabajos"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+</section>
 
     <!-- FAQ -->
     <section id="faq" class="py-16 md:py-24 bg-gray-900">
