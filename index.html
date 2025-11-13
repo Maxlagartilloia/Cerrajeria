@@ -90,9 +90,23 @@
       50%{ opacity:.8; transform:scale(1.05); }
       100%{ opacity:.5; transform:scale(1); }
     }
-    /* Pausa la animación durante el gesto de scroll y para usuarios con reduced motion */
-    .is-scrolling .hot-metal-bg::before{ animation:none !important; }
-    @media (max-width:768px){ .logo-link img{ height:12rem; } }
+/* Pausa la animación durante el gesto de scroll y para usuarios con reduced motion */
+.is-scrolling .hot-metal-bg::before{ animation:none !important; }
+
+/* LOGO EN TELÉFONO (grande) */
+@media (max-width:768px){
+  .logo-link img{
+    height:12rem !important;
+  }
+}
+
+/* LOGO EN TABLET / PC (tamaño elegante) */
+@media (min-width:769px){
+  .logo-link img{
+    height:4.5rem !important;
+    max-height:4.5rem !important;
+  }
+}
     @media (prefers-reduced-motion:reduce){ .hot-metal-bg::before{ animation:none !important; } }
 
     /* Hover botón naranja */
